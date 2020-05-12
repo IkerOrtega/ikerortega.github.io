@@ -1,0 +1,131 @@
+
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-segment [(ngModel)]="segment">
+      <ion-segment-button *ngFor="let seg of segmentList" (click)="segmentChanged(seg)" value="{{seg}}" >
+        <ion-label>{{ 'mainPage.segments.' + seg |translate}}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+    <ion-select slot="end" color="secondary" interface="popover" (ionChange)="changeLanguage($event)"
+      class="ion-padding" [(ngModel)]="selectedLanguage">
+      <ion-select-option *ngFor="let lang of languages" value="{{lang}}">
+        {{lang}}
+      </ion-select-option>
+    </ion-select>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  [scrollEvents]="true"
+(ionScroll)="checkScrolling($event)">
+  <ion-grid class="ion-no-padding">
+    <ion-row  class="primary">
+      <ion-col class="ion-padding ion-text-center">
+        <div class="font-size-title">
+        <ion-label>{{'mainPage.title' |translate}}</ion-label>
+      </div>
+      <div class="font-size-subtitle">
+        <ion-label>{{'mainPage.subtitle' |translate}}</ion-label>
+      </div>
+      </ion-col>
+    </ion-row>
+    <ion-row id="intro">
+      <ion-col size="3">
+        
+      </ion-col>
+      <ion-col>
+
+      </ion-col>
+    </ion-row>
+    <ion-row id="projects" >
+      <ion-col  >
+        <ion-grid>
+          <ion-row>
+            <ion-col class="ion-padding ion-text-center font-size-subtitle">
+              <ion-label >{{'mainPage.segments.projects' | translate}}</ion-label>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="6" *ngFor="let project of projectList" >
+              <ion-card>
+                <ion-card-content>
+                  <ion-label>{{project.name}}</ion-label>
+                  <ion-label>README: </ion-label>
+                  <ion-label>{{project.readme}}</ion-label>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid> 
+      </ion-col>
+    </ion-row>
+    <ion-row>
+    </ion-row>
+    <ion-row id="contact" class="dark">
+      <ion-col class="ion-padding ion-text-center">
+      <div class="font-size-subtitle">
+        <ion-label>{{'mainPage.segments.contact' |translate}}</ion-label>
+      </div>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-item>
+                <ion-icon name="logo-github" slot="start" size="large"></ion-icon>
+                <a href="https://github.com/IkerOrtega">IkerOrtega</a>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-icon name="logo-twitter" slot="start" size="large"></ion-icon>
+                <a href="https://twitter.com/IkerOrtegaG">@IkerOrtegaG</a>
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                <ion-icon src="\assets\icon\logo-itch-io.svg" slot="start" size="large" color="primary"></ion-icon>
+                <ion-label>
+                  <a href="https://ikerortega.itch.io/">IkerOrtega</a>
+                </ion-label>
+               
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                
+                <ion-icon name="logo-twitch" slot="start" size="large" color="primary"></ion-icon>
+                <ion-label>
+                  <a href="https://www.twitch.tv/ikerortegag">IkerOrtegaG</a>
+                </ion-label>
+               
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                
+                <ion-icon name="mail" slot="start" size="large" color="primary"></ion-icon>
+                <ion-label>
+                  <a href="https://www.twitch.tv/ikerortegag/" target="_blank">IkerOrtegaG</a>
+                </ion-label>
+               
+              </ion-item>
+            </ion-col>
+            <ion-col size="6">
+              <ion-item>
+                
+                <ion-icon name="logo-youtube" slot="start" size="large"></ion-icon>
+                <ion-label>
+                  <a href="https://www.youtube.com/channel/UCzF-yBliBaR1nBorHduonPw" target="_blank">Iker Ortega</a>
+                </ion-label>
+               
+              </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
