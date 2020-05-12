@@ -1,0 +1,11 @@
+{
+    "mainPage": {
+        "segments": {
+            "intro": "Introduction",
+            "projects": "Projects",
+            "contact": "Contact"
+        },
+        "title": "Iker Ortega",
+        "subtitle": "IT Engineer and Game Programmer"
+    }
+}
