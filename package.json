@@ -1,8 +1,8 @@
 {
   "name": "ikerortega.github.io",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Iker Ortega",
+  "homepage": "https://ikerortega.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": " ionic build --prod --base-href https://ikerortega.com && npx angular-cli-ghpages --branch=master --dir=www"
+    "deploy": "ng deploy"
   },
   "private": true,
   "dependencies": {
@@ -56,5 +56,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "Portfolio of Iker Ortega"
 }
