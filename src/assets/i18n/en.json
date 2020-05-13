@@ -6,6 +6,10 @@
             "contact": "Contact"
         },
         "title": "Iker Ortega",
-        "subtitle": "IT Engineer and Game Programmer"
+        "subtitle": "IT Engineer and Game Programmer",
+        "introduction": "I'm an engineer"
+    },
+    "projectDetail": {
+        "linkButton": "Go to project"
     }
 }

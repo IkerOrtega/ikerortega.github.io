@@ -1,3 +1,4 @@
+import { ProjectDetailPageModule } from './../modals/project-detail/project-detail.module';
 import { GithubService } from './../services/github.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,7 +24,7 @@ import { HttpClient } from '@angular/common/http';
     GithubService
   ],
   exports: [
-    TranslateModule
+    TranslateModule,
   ]
 })
 export class SharedModule { }

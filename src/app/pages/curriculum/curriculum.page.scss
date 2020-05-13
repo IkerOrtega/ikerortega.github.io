@@ -13,12 +13,22 @@ ion-avatar {
     background-color: var(--ion-color-dark);
     color: var(--ion-color-dark-contrast);
 }
-.font-size-title {
-    font-size: 5rem;
+
+
+
+
+ion-card {
+        box-shadow: none;
 }
 
-.font-size-subtitle {
-    font-size: 3rem;
+.mediaIcon {
+    --background: var(--ion-color-white) !important;
+    --color:var(--ion-color-primary) !important;
+}
+
+.mediaIcon:hover {
+    --background: var(--ion-color-primary) !important;
+    --color:var(--ion-color-white) !important;
 }
      
 

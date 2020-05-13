@@ -24,3 +24,21 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.font-size-title {
+    font-size: 5rem;
+}
+
+.font-size-subtitle {
+    font-size: 3rem;
+}
+.font-size-standard {
+    font-size: 1.5rem;
+}
+.font-size-project-title {
+    font-size: 2rem;
+}
+
+.max-height-img {
+    max-height: 150pt;
+}

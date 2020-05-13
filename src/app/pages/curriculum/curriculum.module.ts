@@ -6,6 +6,7 @@ import { CurriculumPage } from './curriculum.page';
 
 import { CurriculumPageRoutingModule } from './curriculum-routing.module';
 import { SharedModule } from '../../shared/shared.module';
+import { ProjectDetailPageModule } from 'src/app/modals/project-detail/project-detail.module';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     FormsModule,
     CurriculumPageRoutingModule,
-    SharedModule
+    SharedModule,
+    ProjectDetailPageModule
   ],
   declarations: [CurriculumPage]
 })

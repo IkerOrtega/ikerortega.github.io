@@ -1,9 +1,10 @@
+import { ProjectDetailPage } from './../../modals/project-detail/project-detail.page';
 import { Segment } from './../../models/segment';
 import { GithubService } from './../../services/github.service';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { IonContent, IonSegment } from '@ionic/angular';
+import { IonContent, IonSegment, ModalController } from '@ionic/angular';
 import { Project } from 'src/app/models/project';
 
 @Component({
@@ -28,7 +29,8 @@ export class CurriculumPage implements OnInit, OnDestroy{
   segment: string = "intro"
   constructor(
     private translate: TranslateService,
-    private github: GithubService
+    private github: GithubService,
+    private modal: ModalController
   ) {
    
   }
@@ -80,26 +82,19 @@ export class CurriculumPage implements OnInit, OnDestroy{
     this.scrollToLabel(seg);
   }
 
-  
+  openPage(url: string) {
+    window.open(url, '_blank');
+  }
 
-  checkScrolling(ev:any) {
-    /*
-    this.segmentList.forEach(seg => {
-      var elem = document.getElementById(seg);
-      if(elem.offsetParent !== null) {
-        console.log("Segmento: " + seg);
-        this.segment = seg;
-        return;
+  async openProjectDetail(index: number) {
+    let project = this.projectList[index];
+    let modal = await this.modal.create({
+      component: ProjectDetailPage,
+      componentProps: {
+        project: project
       }
-      
-      if(elem.offsetTop > ev.detail.currentY && elem.offsetTop + elem.offsetHeight > ) {
-        console.log("Segmento: " + seg);
-        console.log("Y: " + elem.offsetTop);
-        
-        this.segment = seg;
-        
-      
     });
-     }*/
+
+    modal.present();
   }
 }

@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./pages/curriculum/curriculum.module').then(m => m.CurriculumPageModule)
-  }
+  },
+
 ];
 @NgModule({
   imports: [
