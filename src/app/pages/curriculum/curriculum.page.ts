@@ -1,10 +1,8 @@
 import { ProjectDetailPage } from './../../modals/project-detail/project-detail.page';
-import { Segment } from './../../models/segment';
 import { GithubService } from './../../services/github.service';
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
-import { IonContent, IonSegment, ModalController } from '@ionic/angular';
+import { IonContent, ModalController } from '@ionic/angular';
 import { Project } from 'src/app/models/project';
 
 @Component({
@@ -45,8 +43,9 @@ export class CurriculumPage implements OnInit, OnDestroy{
       let observer = new IntersectionObserver(entries => {
         // isIntersecting is true when element and viewport are overlapping
         // isIntersecting is false when element and viewport don't overlap
-        if(entries[0].isIntersecting === true && this.segment !== seg)
-        console.log("Entrando en " + seg);
+        if(entries[0].isIntersecting === true && this.segment !== seg) {
+          console.log("Entrando en " + seg);
+        }
         this.segment = seg;
       }, { threshold: [0] });
       observer.observe(document.querySelector("#" + seg));
